@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is my body</title>
+    </head>
+    <body>
+        <h2>AJAJ and the XMLHttpRequest</h2>
+        
+        <div id="demo">
+            <h2>Other content</h2>
+            <button type="button" onclick="loadXML()" style="">Load Content</button>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script>
+            function loadXML() {
+                var xhttp = new XMLHttpRequest();
+                
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                
+                xhttp.open("GET", "myfile.txt", true);
+                
+                xhttp.send();
+                
+            }
+            
+        </script>
+    </body>
+</html>
